@@ -1,0 +1,119 @@
+/* บันทึกเป็นไฟล์ชื่อ style.css */
+body { 
+    font-family: 'Kanit', sans-serif; 
+    background-color: #e9ecef; 
+    margin: 0; 
+    padding: 15px; 
+}
+
+.container { 
+    max-width: 650px; 
+    margin: 20px auto; 
+    background: #ffffff; 
+    padding: 30px; 
+    border-radius: 25px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+    border-top: 12px solid #003366; /* สีน้ำเงินเข้มตำรวจ */
+}
+
+header { 
+    text-align: center; 
+    border-bottom: 3px solid #f1f1f1; 
+    padding-bottom: 20px; 
+    margin-bottom: 25px; 
+}
+
+h1 { color: #003366; margin: 0; font-size: 28px; }
+
+#timer-box { 
+    font-size: 24px; 
+    color: #cc0000; 
+    font-weight: 600; 
+    background: #fff0f0;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 50px;
+    margin: 15px 0;
+}
+
+#progress { color: #888; font-size: 15px; margin-top: 5px; }
+
+#category-label { 
+    background: #fff4e5; 
+    color: #b8860b; 
+    padding: 6px 18px; 
+    border-radius: 15px; 
+    display: inline-block; 
+    font-size: 14px; 
+    font-weight: 600;
+    margin-bottom: 15px; 
+}
+
+#question-text { 
+    font-size: 20px; 
+    line-height: 1.7; 
+    margin-bottom: 25px; 
+    color: #2c3e50;
+}
+
+.option-btn { 
+    display: block; 
+    width: 100%; 
+    padding: 18px; 
+    margin-bottom: 15px; 
+    border: 2px solid #edeff2; 
+    border-radius: 15px; 
+    background: #fdfdfd; 
+    text-align: left; 
+    font-size: 17px; 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+}
+
+.option-btn:hover { 
+    border-color: #b8860b; 
+    background: #fffdf5; 
+}
+
+.selected { 
+    background-color: #003366 !important; 
+    color: #ffffff !important; 
+    border-color: #003366 !important; 
+    transform: scale(1.02);
+}
+
+.nav-controls { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 30px; 
+    gap: 15px; 
+}
+
+.nav-controls button { 
+    flex: 1; 
+    padding: 16px; 
+    border: none; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    font-size: 17px; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+#prev-btn { background: #e0e0e0; color: #444; }
+#next-btn { background: #b8860b; color: #fff; } /* ปุ่มถัดไปสีทอง */
+
+#prev-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+#result-box { text-align: center; padding: 50px 20px; }
+#final-score { font-size: 70px; color: #003366; font-weight: 700; margin: 25px 0; }
+
+.retry-btn { 
+    background: #003366; 
+    color: #fff; 
+    border: none; 
+    padding: 18px 40px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    cursor: pointer;
+}
