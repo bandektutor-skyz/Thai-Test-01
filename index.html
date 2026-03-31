@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANDEK.TUTOR - แนวข้อสอบภาษาไทย ชุดที่ 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="BANDEK TUTOR" style="max-width: 280px; height: auto; display: block; margin: 0 auto;">
+            <p style="color: #b8860b; font-weight: bold;">แนวข้อสอบภาษาไทย ชุดที่ 1</p>
+            <div id="timer-box">เวลาเหลือ: <span id="timer">60:00</span></div>
+            <div id="progress">ข้อที่: 1 / 50</div>
+        </header>
+
+        <div id="quiz-box">
+            <div id="category-label">หมวดหมู่: กำลังโหลด...</div>
+            <p id="question-text">กรุณารอสักครู่ ระบบกำลังเตรียมข้อสอบชุดที่ 1...</p>
+            <div id="options-container">
+                </div>
+            
+            <div class="nav-controls">
+                <button id="prev-btn" onclick="goPrev()">⬅ ย้อนกลับ</button>
+                <button id="next-btn" onclick="goNext()">ข้อถัดไป ➔</button>
+            </div>
+        </div>
+
+        <div id="result-box" style="display: none;">
+            <h2>สรุปผลการสอบ (ชุดที่ 1)</h2>
+            <div id="final-score">0 / 50</div>
+            <p id="evaluation-text"></p>
+            <button class="retry-btn" onclick="location.reload()">เริ่มทำชุดที่ 1 ใหม่</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
