@@ -1,7 +1,7 @@
 /* บันทึกเป็นไฟล์ชื่อ app.js */
 let currentIndex = 0;
-let userAnswers = new Array(150).fill(null); // เก็บคำตอบ (150 ข้อ)
-let timeLeft = 180 * 60; // 180 นาที
+let userAnswers = new Array(50).fill(null); // เก็บคำตอบ (50 ข้อ)
+let timeLeft = 60 * 60; // 60 นาที
 let timerInterval;
 
 function init() {
@@ -30,8 +30,8 @@ function renderQuestion() {
     // ดึงข้อมูลจาก questions.js
     const q = questions[currentIndex]; 
     
-    document.getElementById("progress").innerText = `ข้อที่: ${currentIndex + 1} / 150`;
-    document.getElementById("category-label").innerText = `หมวดหมู่: ${q.category}`;
+    document.getElementById("progress").innerText = `ข้อที่: ${q.no} / 50`;
+document.getElementById("category-label").innerText = `หมวดหมู่: ${q.category || "คำศัพท์และหลักภาษาไทย"}`;
     document.getElementById("question-text").innerText = q.question;
     
     const container = document.getElementById("options-container");
@@ -56,7 +56,7 @@ function renderQuestion() {
 
     // คุมปุ่มนำทาง
     document.getElementById("prev-btn").disabled = (currentIndex === 0);
-    document.getElementById("next-btn").innerText = (currentIndex === 149) ? "ส่งข้อสอบ" : "ข้อถัดไป ➔";
+    document.getElementById("next-btn").innerText = (currentIndex === 49) ? "ส่งข้อสอบ" : "ข้อถัดไป ➔";
 }
 
 function goPrev() {
@@ -67,11 +67,11 @@ function goPrev() {
 }
 
 function goNext() {
-    if (currentIndex < 149) {
+    if (currentIndex < 49) {
         currentIndex++;
         renderQuestion();
     } else {
-        if (confirm("คุณตรวจสอบคำตอบครบ 150 ข้อแล้วใช่ไหมครับ?")) {
+        if (confirm("คุณตรวจสอบคำตอบครบ 50 ข้อแล้วใช่ไหมครับ?")) {
             finishExam();
         }
     }
@@ -90,11 +90,11 @@ function finishExam() {
 
     document.getElementById("quiz-box").style.display = "none";
     document.getElementById("result-box").style.display = "block";
-    document.getElementById("final-score").innerText = `${finalScore} / 150`;
+    document.getElementById("final-score").innerText = `${finalScore} / 50`;
     
     let evaluation = "";
-    if (finalScore >= 120) evaluation = "ยอดเยี่ยมที่สุด! เตรียมตัวเป็นว่าที่นายสิบตำรวจได้เลยครับ";
-    else if (finalScore >= 90) evaluation = "เก่งมากครับ ผ่านเกณฑ์พื้นฐานแล้ว ฝึกเพิ่มอีกนิดนะครับ";
+    if (finalScore >= 45) evaluation = "ยอดเยี่ยมที่สุด! เตรียมตัวเป็นว่าที่ข้าราชการได้เลยครับ";
+    else if (finalScore >= 30) evaluation = "เก่งมากครับ ผ่านเกณฑ์พื้นฐานแล้ว ฝึกเพิ่มอีกนิดนะครับ";
     else evaluation = "สู้ๆ ครับ กลับมาทบทวนข้อที่ผิดบ่อยๆ นะครับ!";
     
     document.getElementById("evaluation-text").innerText = evaluation;
