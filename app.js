@@ -29,8 +29,7 @@ function startTimer() {
 function renderQuestion() {
     // ดึงข้อมูลจาก questions.js
     const q = questions[currentIndex]; 
-    
-    document.getElementById("progress").innerText = `ข้อที่: ${q.no} / 50`;
+    document.getElementById("progress").innerText = "ข้อที่: " + (currentIndex + 1) + " / 50";
 document.getElementById("category-label").innerText = `หมวดหมู่: ${q.category || "คำศัพท์และหลักภาษาไทย"}`;
     document.getElementById("question-text").innerText = q.question;
     
